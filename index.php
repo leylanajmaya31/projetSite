@@ -26,7 +26,7 @@
     if(isset($_SESSION['connected'])){
         //routeur
         switch ($path) {
-            case '/projetSite':
+            case '/projetSite/':
                 $homeController->getHome();
                 break;
             case '/projetSite/roleadd':
@@ -44,9 +44,6 @@
             case '/projetSite/recetteall':
                 $recetteController->getAllRecette();
                 break;
-                // case '/projetSite/recetteone':
-                //     $recetteController->getOneRecette($id_recette);
-                //     break;
             case '/projetSite/emailtest':
                 $homeController->testMail();
                 break;

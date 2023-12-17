@@ -36,3 +36,4 @@ class IngredientController extends Ingredient{
     }
 }
 
+

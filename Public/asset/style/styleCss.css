@@ -143,56 +143,76 @@ nav {
     z-index: 0; 
   }
   
-  .searchBar{
-      width: 25em;
-      max-width: 700px;
-      background: rgba(255, 255, 255, 0.687);
-      display: flex;
-      justify-content: space-around;
-      border-radius: 40px;
-      border: solid #523634;
-  } 
-  
-  .searchBar input{
-      margin: .625rem .625rem .625rem .625rem;
-      background: transparent;
-      align-items: center;
-      border: 0;
-      outline: none; 
-      /* padding: 10 50 10 0; */
-      font-size: 13px;
-      color: #523634;
-  } 
-  
-  ::placeholder{
-      color: #523634;
-      width: 205%;
-  } 
-
-  .searchBar button img{
-    width: 15px;
-    height: auto;
+  .container .searchBar{
+    width: 25em;
+    max-width: 700px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.687);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 40px;
+    padding: 10px 10px;
+    border: solid #523634;
 } 
 
-  .searchBar button{
-      border: 0;
-      border-radius: 50%;
-      width: .625rem;
-      height: .9375rem;
-      background: #523634;
-      cursor: pointer;
-      padding: .3125rem;
-  } 
+.searchBar{
+  margin-top: 200px;
+}
 
-  /* **********************Recettes********************************* */
-
-  #titreh1 {
-    font-style: georgia, verdana;
-    font-size: large;
+.container .searchBar input{
+    background: transparent;
+    border: 0;
+    outline: none; 
+    padding: 10px;
+    font-size: 13px;
     color: #523634;
-    text-align: center;
-    padding: 50px 0; /* Ajouter de l'espace en haut et en bas du titre */
-  }
+}
+
+::placeholder{
+    color: #523634;
+    width: 205%;
+}
+
+.container .searchBar .searchbtn img{
+    width: 15px;
+} 
+
+.container .searchBar .searchbtn {
+    border: 0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background: #523634;
+    cursor: pointer;
+    padding: 10px;
+} 
+
+/* ************************************ titres et cards ************************************ */
+.mainContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  gap: 20px; 
+}
+
+#mainTitle1, #mainTitle2{
+  font-style: georgia,verdana;
+  font-size: large;
+  color: #523634;
+  text-align: center;
+  padding: 50px;
+}
+
+h1{
+font-style: georgia,verdana;
+font-size: x-large;
+color: #523634;
+text-align: center;
+grid-column: 2/3;
+margin: 0 auto;
+padding-bottom: 30px;
+}
 
 hr {
   margin: 10px 0;
@@ -202,40 +222,22 @@ hr {
   width: 100%;
 }
 
-.mainContent {
+.card{
+  width: 80%;
+  border-radius: 5px;
+  margin: auto;
   display: flex;
-  flex-wrap: wrap; /* Pour permettre le passage à la ligne si nécessaire */
-  justify-content: center; /* Centrer horizontalement les cartes */
-  gap: 20px; /* Espacement entre les cartes */
+  flex-direction: row;
+  gap: 40px;
 }
-
-
-.card1 {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  margin-bottom: 20px; /* Espacement entre les cartes */
-  width: 300px; /* Ajustez la largeur selon vos préférences */
-  max-width: 100%; /* Pour assurer la responsivité */
-  box-sizing: border-box; /* Assurez-vous que la largeur inclut le rembourrage et la bordure */
-  text-align: center;
-}
-
-img {
-  border-radius: 5px 5px 0 0;
-  width: 100%;
-  height: 200px; /* Ajustez la hauteur selon vos préférences */
-  object-fit: cover; /* Pour s'assurer que l'image remplit complètement la boîte */
-  margin-bottom: 20px;
-}
-
 
 .card div:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-/* 
+
 img {
   border-radius: 5px 5px 0 0;
-} */
+}
 
 .mainContainer {
   padding: 30px 16px;
@@ -244,7 +246,6 @@ img {
 h4{
   color: #B6452C;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  text-align: center;
 }
 
 .profil{
@@ -256,30 +257,109 @@ h4{
 }
 
   /* ********************** Cards ********************** */
-  #cardButton {
-    display: block;
-    margin: 0 auto; /* Centre le bouton horizontalement */
-    padding: 10px; /* Ajustez selon vos besoins */
-    font-size: 15px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    cursor: pointer;
-    color: #523634;
-    background-color: #ddc5a2bc;
-    border: solid #B6452C;
-    border-radius: 25px;
-    max-width: 200px; /* Ajustez la largeur maximale selon vos besoins */
-    width: 100%; /* Empêche le bouton de dépasser la largeur de la carte */
-    text-align: center; /* Centre le texte à l'intérieur du bouton */
-  }
+#cardButton {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
+  color: #523634;
+  background-color: #ddc5a2bc;
+  border: solid #B6452C;
+  border-radius: 25px;
+  align-self: center;
+  align-items: center;
+}
 
 .card1 {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   padding-bottom: 40px;
 }
+
+.card2 {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding-bottom: 40px;
+  align-items: center;
+}
+
+.card h4, .card p, .card{
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card3 {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding-bottom: 20px;
+}
+
+  /* ********************** Test caroussel ********************** */
+h5{
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: #B6452C;
+}
+/* ************************************* Test images remplace carousel ******************************** */
+.cercle{
+  margin: 0 20px;
+  }
+  
+.cercle {
+width: 150px; 
+height: 150px; 
+border-radius: 50%; 
+display: inline-block; /* Images en ligne horizontalement */
+margin: 15px; 
+overflow: hidden; /* Masquer les images qui dépassant du cercle */
+margin-left: 30px; 
+margin-right: 20px; 
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+}
+
+.cercle img {
+width: 100%; 
+height: auto;
+}
+
+/* ****************************** Diapo Ateliers ************************* */
+.conteneur-diaporama {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  gap: 5px;
+}
+
+img {
+  max-height: 400px; 
+}
+
+.maDiapo {
+  position: relative; 
+}
+
+.bouton-image {
+  position: absolute; 
+  bottom: 10px; 
+  left: 10px; 
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
+  color: #523634;
+  background-color: #DDC5A2;
+  border: solid #B6452C;
+  border-radius: 25px;
+  align-self: center;
+}
+
   /* ******************************* FORM ******************************* */
-
-
 #form1 {
   background-color: #fff;
   padding: 20px;
@@ -289,8 +369,6 @@ h4{
   max-width: 600px;
   margin: 100px auto;
   padding: 20px;
-  /* margin-top: 100px;
-  margin-bottom: 100px; */
 }
 
 label {
@@ -350,9 +428,8 @@ select {
   height: 20px;
 }
 
-
 /* Style pour le bouton de soumission */
-button[type="submit"] {
+ .formbtn[type="submit"] {
   background-color: #ddc5a285;
   color: #523634;
   padding: 10px 20px;
@@ -367,10 +444,9 @@ button[type="submit"] {
 }
 
 /* Style pour le bouton de soumission au survol */
-button[type="submit"]:hover {
+ .formbtn[type="submit"]:hover {
   background-color: #B6452C;
 }
-
 
  /* ********************** Footer ********************** */
 .footer-basic {
@@ -411,12 +487,6 @@ button[type="submit"]:hover {
   text-align:center;
   padding-bottom:25px;
 }
-
-/* .footer-basic .social a > i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
 
 .footer-basic .social > a {
   text-decoration: none;

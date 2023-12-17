@@ -39,18 +39,23 @@ public function addIngredient(){
         $quantite = $this->getQuantite(); 
         $unite = $this->getUnite();
         $conn = Connexion::getInstance()->getConn();
-        $req = $conn->prepare ('INSERT INTO ingredient(nom_ingredient, quantite_ingredient, unite_ingredient)
-        VALUES (?,?,?)');
+        $req = $conn->prepare('INSERT INTO ingredient(nom_ingredient, quantite_ingredient, unite_ingredient)
+            VALUES (?, ?, ?)');
         $req->bindParam(1, $nom, \PDO::PARAM_STR);
+        // Ajouter la quantité
         $req->bindParam(2, $quantite, \PDO::PARAM_INT);
-        $req->bindParam(3, $unite, \PDO::PARAM_STR);
+        // Vérifier si l'unité est définie avant de l'ajouter à la base de données
+        if ($unite !== null && $unite !== '---') {
+            $req->bindParam(3, $unite, \PDO::PARAM_STR);
+        } else {
+            $req->bindValue(3, null, \PDO::PARAM_NULL);
+        }
         $req->execute();
         $this->id_ingredient = $conn->lastInsertId();
     } catch (\Exception $e) {
         die('Error :'.$e->getMessage());
     } 
 }
-
 
 
 public function addIngredientToRecette($idRecette) {
@@ -69,7 +74,6 @@ public function addIngredientToRecette($idRecette) {
         die('Error: ' . $e->getMessage());
     }
 }
-
 
 public function findOneBy(){
     try {

@@ -26,7 +26,7 @@
             <li><a href="#">Toutes les vidéos</a>
           </ul>
         </li>
-        <li><a href="ateliers.html">Ateliers</a></li>
+        <li><a href="ateliers.html"><i class='bx bx-calendar' style='color:#B6452C'></i>Ateliers</a></li>
         <li class="menu-deroulant">
           <a href="./projetSite"><i class='bx bx-user-circle' style='color:#B6452C'></i> Mon compte</a>
           <ul class="sous-menu">
@@ -44,7 +44,7 @@
     <div class="container">
     <form action="" class="searchBar">
       <input type="text" placeholder="Rechercher une recette, un ingrédient" name="q">
-      <button type="submit"><img src="./Public/asset/images/search.png" alt="icône de recherche"></button>
+      <button type="submit" class="searchbtn"><img src="./Public/asset/images/search.png" alt="icône de recherche"></button>
     </form>
   </div>
 <?php else:?>
@@ -55,7 +55,7 @@
     </div>
   <nav>
       <ul>
-        <li class="active"><a href="./"><i class='bx bx-home' style='color:#b6452c'></i> Accueil</a></li>
+        <li class="active"><a href="#"><i class='bx bx-home' style='color:#b6452c'></i> Accueil</a></li>
         <li class="menu-deroulant">
           <a href="#">Recettes</a>
           <ul class="sous-menu">
@@ -74,7 +74,7 @@
             <li><a href="#">Toutes les vidéos</a>
           </ul>
         </li>
-        <li><a href="ateliers.html">Ateliers</a></li>
+        <li><a href="ateliers.html"><i class='bx bx-calendar' style='color:#B6452C'></i>Ateliers</a></li>
         <li class="menu-deroulant">
           <a href="inscription-connexion.html"><i class='bx bx-user-circle' style='color:#B6452C'></i> Compte</a>
           <ul class="sous-menu">
@@ -90,7 +90,7 @@
     <div class="container">
     <form action="" class="searchBar">
       <input type="text" placeholder="Rechercher une recette, un ingrédient" name="q">
-      <button type="submit" class="searchicone"> <i class='bx bx-search' style='color:#ffffff'  ></i></button>
+      <button type="submit" class="searchbtn"><img src="./Public/asset/images/search.png" alt="icône de recherche"></button>
     </form>
   </div>
 <?php endif;?>

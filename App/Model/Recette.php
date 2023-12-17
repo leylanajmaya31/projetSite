@@ -12,10 +12,10 @@ class Recette {
     private ?string $date_recette;
     private ?int $portion_recette;
     private ?string $temps_recette;
-    private ?bool $statut_recette;
+    private ?bool $statut_recette = null;
     private ?string $description_recette;
-    private ?string $image_recette;
-    private ?string $unite_recette;
+    private ?string $image_recette = null;
+    private ?string $unite_recette = null;
     private ?Utilisateur $auteur_recette;
 
     public function __construct(){
@@ -62,9 +62,6 @@ class Recette {
     public function setTemps(?string $temps):void{
         $this->temps_recette = $temps;
     }
-    // public function getStatut():?bool{
-    //     return $this->statut_recette;
-    // }
     public function getStatut(): ?bool {
         return !empty($this->statut_recette);
     }

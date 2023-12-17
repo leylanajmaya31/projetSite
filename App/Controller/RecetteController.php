@@ -41,11 +41,9 @@ class RecetteController extends Recette {
                 $imageName = Utilitaire::cleanInput($_FILES['image_recette']['name']);
                 $uploadDir = './Public/asset/images/'; // Chemin vers le répertoire de destination
                 $uploadFile = $uploadDir.basename($imageName);
-
                 if(move_uploaded_file($_FILES['image_recette']['tmp_name'], $uploadFile)) {
                     // Le fichier a été téléchargé avec succès
                     $this->setImage($imageName);
-
                     // Vérifier si la recette existe déjà
                     $recette = $this->findOneBy();
                     if($recette) {
@@ -63,6 +61,8 @@ class RecetteController extends Recette {
                             $ingredient->setNom($ingredientArray['name']);
                             $ingredient->setQuantite($ingredientArray['quantity']);
                             $ingredient->setUnite($ingredientArray['unit']);
+                            // Ajouter la vérification de l'unité avant d'ajouter à la base de données
+                            $ingredient->setUnite(isset($ingredientArray['unit']) ? $ingredientArray['unit'] : null); 
                             $ingredient->addIngredient();
                             $ingredient->addIngredientToRecette($this->getIdRecette());
                         }

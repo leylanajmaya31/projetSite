@@ -83,7 +83,7 @@ class UtilisateurController extends Utilisateur{
                         $_SESSION['prenom'] = $user->getPrenom();
                         $_SESSION['image'] = $user->getImage();
                         $error = 'vous êtes connecté';
-                        header('Location: ./');
+                        header('Refresh:1; url=./');
                     }else {
                         $error = "Les informations de connexion ne sont pas valides";
                     }
